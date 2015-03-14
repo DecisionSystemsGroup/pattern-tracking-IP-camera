@@ -12,7 +12,7 @@ def action(what):
 	
 
 while True:
-    #take frame from IP-camera, convert it to numpy array and transorm it to grayscale
+    #taking a frame from the IP-camera, converting it to array and transorming it to grayscale
     im = urllib.urlopen('http://192.168.1.64:8001/snapshot.jpg?username=admin&userpwd=admin')
     img = np.asarray(bytearray(im.read()), dtype=np.uint8)
     image = cv2.imdecode(img,0)
