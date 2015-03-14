@@ -11,7 +11,7 @@ def action(what):
     httpServ.request('GET', "/ptzctrl?username=admin&userpwd=admin&act=" + what)
 	
 
-while (True):
+while True:
     #take frame from IP-camera, convert it to numpy array and transorm it to grayscale
     im = urllib.urlopen('http://192.168.1.64:8001/snapshot.jpg?username=admin&userpwd=admin')
     img = np.asarray(bytearray(im.read()), dtype=np.uint8)
